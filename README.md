@@ -16,5 +16,7 @@ This is an enhanced wrapper for the already excellent [pyopenvr library](https:/
 - Download this repo and navigate to it in your conda console
 - `python tracker_test_vislab.py` 
 
-1/18/2024
+# Changelog
+
+1/18/2024  
 (ahs) Updated wrapper and some examples updated to work with newer version of OpenVR python library
