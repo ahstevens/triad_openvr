@@ -3,7 +3,7 @@ import time
 import sys
 
 v = triad_openvr.triad_openvr()
-v.print_discovered_objects()
+#v.print_discovered_objects()
 
 if len(sys.argv) == 1:
     interval = 1/250
@@ -17,7 +17,7 @@ if interval:
     while(True):
         start = time.time()
         txt = ""
-        for each in v.devices["tracker_1"].get_pose_euler():
+        for each in v.devices["vislab_tracker_1"].get_pose_euler():
             txt += "%.4f" % each
             txt += " "
         print("\r" + txt, end="")
