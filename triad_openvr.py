@@ -183,7 +183,7 @@ class vr_tracked_device():
 
 class vr_tracking_reference(vr_tracked_device):
     def get_mode(self):
-        return self.vr.getStringTrackedDeviceProperty(self.index,openvr.Prop_ModeLabel_String).decode('utf-8').upper()
+        return self.vr.getStringTrackedDeviceProperty(self.index,openvr.Prop_ModeLabel_String).upper()
     def sample(self,num_samples,sample_rate):
         print("Warning: Tracking References do not move, sample isn't much use...")
 
@@ -212,7 +212,7 @@ class triad_openvr():
             # Iterate through the pose list to find the active devices and determine their type
             for i in range(openvr.k_unMaxTrackedDeviceCount):
                 if poses[i].bDeviceIsConnected:
-                    device_serial = self.vr.getStringTrackedDeviceProperty(i,openvr.Prop_SerialNumber_String).decode('utf-8')
+                    device_serial = self.vr.getStringTrackedDeviceProperty(i,openvr.Prop_SerialNumber_String)
                     for device in config['devices']:
                         if device_serial == device['serial']:
                             device_name = device['name']
